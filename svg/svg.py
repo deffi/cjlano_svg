@@ -591,6 +591,8 @@ class Rect(Transformable):
             self.P2 = Point(self.P1.x + self.xlength(elt.get('width')),
                             self.P1.y + self.ylength(elt.get('height')))
 
+            self.style = elt.get('style')
+
     def __repr__(self):
         return '<Rect ' + self.id + '>'
 
@@ -632,6 +634,7 @@ class Line(Transformable):
             self.P2 = Point(self.xlength(elt.get('x2')),
                             self.ylength(elt.get('y2')))
             self.segment = Segment(self.P1, self.P2)
+            self.style = elt.get('style')
 
     def __repr__(self):
         return '<Line ' + self.id + '>'
